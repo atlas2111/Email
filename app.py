@@ -28,7 +28,6 @@ handler = SlackRequestHandler(app)
 
 
 # Define your EmailGenerator class
-# Define your EmailGenerator class
 class EmailGenerator:
     def generate_email(self, input_data, ):
         template = """You are a helpful assistant that drafts an {email} reply based on an a new email."""
