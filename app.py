@@ -14,7 +14,7 @@ SLACK_EMAIL_BOT_TOKEN = os.environ["SLACK_EMAIL_BOT_TOKEN"]
 SLACK_EMAIL_SIGNING_SECRET = os.environ["SLACK_EMAIL_SIGNING_SECRET"]
 SLACK_EMAIL_BOT_USER_ID = os.environ["SLACK_EMAIL_BOT_USER_ID"]
 
-# Initialize your LLM model and template
+# Initialize the LLM model and a template
 HUGGINGFACEHUB_API_TOKEN = os.environ["HUGGINGFACEHUB_API_TOKEN"]
 repo_id = "tiiuae/falcon-7b-instruct"
 falcon_llm = HuggingFaceHub(repo_id=repo_id, model_kwargs={"temperature": 0.5, "max_new_tokens": 400})
@@ -45,11 +45,11 @@ class EmailGenerator:
         return generated_email
 
 
-# Create an instance of your EmailGenerator class
+# Create an instance of EmailGenerator class
 email_bot = EmailGenerator()
 
 
-# Define your event handler and route as before
+# Define event handler and route
 @app.event("app_mention")
 def handle_mentions(body, say, client):
     text = body["event"]["text"]
